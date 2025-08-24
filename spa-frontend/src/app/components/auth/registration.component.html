@@ -1,0 +1,30 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Register</h1>
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Name" class="border p-2 mb-1 w-full rounded" />
+      <div *ngIf="errors.name" class="text-red-500 text-sm mb-2">
+        {{ errors.name[0] }}
+      </div>
+
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" class="border p-2 mb-1 w-full rounded" />
+      <div *ngIf="errors.email" class="text-red-500 text-sm mb-2">
+        {{ errors.email[0] }}
+      </div>
+
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="border p-2 mb-1 w-full rounded" />
+      <div *ngIf="errors.password" class="text-red-500 text-sm mb-2">
+        {{ errors.password[0] }}
+      </div>
+
+      <input type="password" [(ngModel)]="password_confirmation" name="password_confirmation"
+        placeholder="Confirm Password" class="border p-2 mb-1 w-full rounded" />
+      <div *ngIf="errors.password_confirmation" class="text-red-500 text-sm mb-2">
+        {{ errors.password_confirmation[0] }}
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid" class="bg-green-500 hover:bg-green-600 text-white p-2 rounded w-full transition">
+        Register
+      </button>
+    </form>
+  </div>
+</div>

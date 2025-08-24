@@ -1,0 +1,9 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+    <input type="email" [(ngModel)]="email" placeholder="Email" class="border p-2 mb-4 w-full rounded" />
+    <input type="password" [(ngModel)]="password" placeholder="Password" class="border p-2 mb-4 w-full rounded" />
+    <button (click)="login()"
+      class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded w-full transition">Login</button>
+  </div>
+</div>
